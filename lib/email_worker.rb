@@ -42,5 +42,4 @@ class EmailWorker < SimpleWorker::Base
 
   end
 
-
 end
