@@ -1,3 +1,5 @@
+# Sample worker that sends an email.
+
 require 'simple_worker'
 require 'mail'
 

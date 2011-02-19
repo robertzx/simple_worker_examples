@@ -1,3 +1,6 @@
+# This worker simply calls back to a URL in your application. Great for performing some action
+# on your application on a schedule.
+
 require 'simple_worker'
 require 'httparty'
 require 'active_record'
