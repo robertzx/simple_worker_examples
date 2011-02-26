@@ -1,11 +1,18 @@
 #--
-# Copyright (c) 2011 Roman Kononov
-# Developed for SimpleWorker.com
+# Copyright (c) 2011 SimpleWorker.com
+# Developer: Roman Kononov
+#
+# KloutWorker is a simple example of how the Klout API can be called from a Worker and the results
+# stored into a SimpleDB domain (using SimpleRecord).  An example of this would be to
+# go through your entire user base on a nightly basis, get the Klout score, and store it
+# back into your own database.
 #
 #
+# THESE EXAMPLES ARE INTENDED AS LEARNING AIDS FOR BUILDING WORKERS TO BE USED AT SIMPLEWORKER.COM.
+# THEY CAN BE USED IN YOUR OWN CODE AND MODIFIED AS YOU SEE FIT.
 #
+# 
 #++
-
 
 require 'simple_worker'
 require 'simple_record'
@@ -57,3 +64,4 @@ class KloutWorker < SimpleWorker::Base
   end
 
 end
+
