@@ -21,11 +21,11 @@ class HelloWorker < SimpleWorker::Base
   attr_accessor :some_param
 
   def run
-    log "Starting HelloWorker\n"
-    log "Hello!  I am a worker and am working very hard for you."
-    log "some_param --> #{some_param}"
+    log "Starting HelloWorker #{Time.now}\n"
+    log "Hey. I'm a worker job, showing how this cloud-based worker thing works."
+    log "some_param --> #{some_param}\n"
     sleep 2
-    log "\nDone running HelloWorker"
+    log "Done running HelloWorker #{Time.now}"
   end
 
 
