@@ -22,9 +22,9 @@ class HelloWorker < SimpleWorker::Base
 
   def run
     log "Starting HelloWorker #{Time.now}\n"
-    log "Hey. I'm a worker job, showing how this cloud-based worker thing works."
+    log "Hey. I'm a worker job, showing how this cloud-based worker thing works. I'll sleep for a little bit so you can see the workers running!"
     log "some_param --> #{some_param}\n"
-    sleep 2
+    sleep 10
     log "Done running HelloWorker #{Time.now}"
   end
 

@@ -30,6 +30,9 @@ worker3.some_param = "I should be scheduled to run at a later time."
 worker3.schedule(:start_at => 3.minutes.since, :run_every => 60, :run_times => 5)
 
 
+puts "\nCongratulations you've just queued and scheduled workers in the SimpleWorker cloud!\n\n"
+puts "Now go to SimpleWorker.com to view all your jobs running!\n\n"
+
 # That's all there is to it!!! Below you'll see how you can check the status from inside your runner if you want to.
 
 #-----------------------------------------------------------------------------------------------------#
