@@ -1,11 +1,14 @@
 require 'simple_worker'
 load "hello_worker.rb"
 
-# Create a project at SimpleWorker.com to get these credentials
+
+# Create a project at SimpleWorker.com and enter your credentials below
+#-------------------------------------------------------------------------
 SimpleWorker.configure do |config|
   config.access_key = 'ENTER_SW_ACCESS_HERE'
   config.secret_key = 'ENTER_SW_SECRET_HERE'
 end
+#-------------------------------------------------------------------------
 
 # Create and queue the first worker (twice) with an arbitrary parameter
 worker = HelloWorker.new
@@ -18,21 +21,21 @@ end
 # Create and queue the second worker, this time in the highest priority queue.
 worker2 = HelloWorker.new
 worker2.some_param = "I am running at the highest priority."
-worker2.queue(:priority => 1)
+worker2.queue(:priority => 2)
 
 
-# Now let's create a third worker and schedule it.
+# Now let's create a third worker and schedule it to run in 3 minutes, every minute, 5 times.
 worker3 = HelloWorker.new
 worker3.some_param = "I should be scheduled to run at a later time."
-worker3.schedule(:start_at => 5.minutes.since)
-
-# Or you can schedule it to run every hour!
-#worker3.schedule(:start_at => 1.hours.since, :run_every => 3600)
+worker3.schedule(:start_at => 3.minutes.since, :run_every => 60, :run_times => 5)
 
 
-############# Convenience methods for checking the status of your tasks
+# That's all there is to it!!! Below you'll see how you can check the status from inside your runner if you want to.
+
+#-----------------------------------------------------------------------------------------------------#
+
 def self.wait_for_task(params={})
-  tries = 0
+  tries  = 0
   status = nil
   sleep 1
   while tries < 60
@@ -54,9 +57,7 @@ def self.status_for(ob)
   end
 end
 
-
-
-# Now let's show the status of the two workers we queued
-puts "Let's have the runner (this file) check the status until the workers are complete."
-status = wait_for_task(worker)
-status2 = wait_for_task(worker2)
+# If you want your runner to check and display the status of your worker, simply uncomment the next 3 lines.
+#puts "\nLet's have the runner (this file) check the status until the workers are complete.\n"
+#status = wait_for_task(worker)
+#status2 = wait_for_task(worker2)
