@@ -26,5 +26,11 @@ tw.mongo_host   = @config["mongo_host"]
 tw.mongo_username = @config['mongo_username']
 tw.mongo_password = @config['mongo_password']
 
-tw.run_local
-#tw.queue
+#tw.run_local
+tw.queue
+
+status = tw.wait_until_complete
+p status
+puts tw.get_log
+
+
