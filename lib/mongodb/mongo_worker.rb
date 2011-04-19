@@ -1,6 +1,7 @@
 # Sample worker that connects to MongoDB and performs some operations.
 
 require 'simple_worker'
+require 'mongoid'
 
 class MongoWorker < SimpleWorker::Base
 
