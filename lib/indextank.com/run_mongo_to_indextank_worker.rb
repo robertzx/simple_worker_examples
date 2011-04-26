@@ -7,6 +7,8 @@
 #mongo_port: 27066
 #mongo_username: ABC
 #mongo_password: XYZ
+#mongo_db_name: workertest # name of database in your mongo instance
+#indextank_url: http://:MYTANKID+@1j.api.indextank.com
 
 
 require 'simple_worker'
@@ -21,11 +23,11 @@ SimpleWorker.configure do |config|
 end
 
 tw               = MongoToIndextankWorker.new
-tw.mongo_db   = 'workertest'
 tw.mongo_host   = @config["mongo_host"]
 tw.mongo_username = @config['mongo_username']
 tw.mongo_password = @config['mongo_password']
 tw.indextank_url = @config['indextank_url']
+tw.mongo_db_name = @config["mongo_db_name"]
 
 #tw.run_local
 tw.queue

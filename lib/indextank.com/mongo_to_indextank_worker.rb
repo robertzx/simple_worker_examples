@@ -3,10 +3,11 @@
 
 require 'simple_worker'
 require 'mongoid'
+require 'indextank'
 
 class MongoToIndextankWorker < SimpleWorker::Base
 
-#  merge_gem 'faraday-stack', :require=>'faraday_stack'
+  merge_gem 'faraday-stack', :require=>'faraday_stack'
   merge_gem 'indextank'
   merge 'person'
 
