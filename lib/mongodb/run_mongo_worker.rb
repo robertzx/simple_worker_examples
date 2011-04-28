@@ -1,8 +1,8 @@
 # TO USE:
 # Create a file in this directory called config.yml with the following parameters:
 
-# sw_access_key: fe86fe23525e008bdf33d55c6a4e0037
-#sw_secret_key: afc11e98a05eef217ad5e60c5210a68e
+# sw_access_key: X
+#sw_secret_key: Y
 #mongo_host: abc.mongohq.com
 #mongo_port: 27066
 #mongo_username: ABC
