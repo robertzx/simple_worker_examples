@@ -3,7 +3,6 @@
 
 require 'simple_worker'
 require 'mongoid'
-require 'indextank'
 
 class MongoToIndextankWorker < SimpleWorker::Base
 
@@ -11,7 +10,8 @@ class MongoToIndextankWorker < SimpleWorker::Base
   merge_gem 'indextank'
   merge 'person'
 
-  attr_accessor :mongo_db, :mongo_host, :mongo_username, :mongo_password,
+  attr_accessor :mongo_host, :mongo_port, :mongo_username, :mongo_password,
+                :mongo_db_name,
                 :indextank_url
 
 
@@ -46,7 +46,7 @@ class MongoToIndextankWorker < SimpleWorker::Base
   # Configures smtp settings to send email.
   def init_mongo
     Mongoid.configure do |config|
-      config.database = Mongo::Connection.new(mongo_host, 27066).db(mongo_db)
+      config.database = Mongo::Connection.new(mongo_host, mongo_port).db(mongo_db_name)
       config.database.authenticate(mongo_username, mongo_password)
       config.persist_in_safe_mode = false
     end

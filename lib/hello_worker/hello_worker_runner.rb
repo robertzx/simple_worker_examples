@@ -13,7 +13,7 @@ end
 # Create and queue the first worker (twice) with an arbitrary parameter
 worker = HelloWorker.new
 worker.some_param = "Passing in parameters is easy!"
-2.times do
+10.times do
   worker.queue
 end
 

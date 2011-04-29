@@ -16,18 +16,21 @@ require_relative "mongo_to_indextank_worker.rb"
 
 
 @config = YAML.load_file('config.yml')
+p @config
 
 SimpleWorker.configure do |config|
   config.access_key = @config["sw_access_key"]
   config.secret_key = @config["sw_secret_key"]
 end
 
+
 tw               = MongoToIndextankWorker.new
 tw.mongo_host   = @config["mongo_host"]
+tw.mongo_port = @config["mongo_port"]
 tw.mongo_username = @config['mongo_username']
 tw.mongo_password = @config['mongo_password']
-tw.indextank_url = @config['indextank_url']
 tw.mongo_db_name = @config["mongo_db_name"]
+tw.indextank_url = @config['indextank_url']
 
 #tw.run_local
 tw.queue
