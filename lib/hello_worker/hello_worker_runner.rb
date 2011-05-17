@@ -10,7 +10,7 @@ SimpleWorker.configure do |config|
 end
 #-------------------------------------------------------------------------
 
-# Create and queue the first worker (twice) with an arbitrary parameter
+# Create and queue the first worker (several times) with an arbitrary parameter
 worker = HelloWorker.new
 worker.some_param = "Passing in parameters is easy!"
 10.times do
