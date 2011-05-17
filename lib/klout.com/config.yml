@@ -1,0 +1,16 @@
+sw_access_key: ABC
+sw_secret_key: XYZ
+
+klout_api_key: ABC
+twitter_usernames: ["simpleworker", "chadarimura", "klout", "techcrunch", "monkchips", "cote", "sgblank", "venturehacks", "nulltweet12345"]
+
+aws_access_key: ABC
+aws_secret_key: XYZ
+
+mongo_host: somehostname.mongohq.com
+mongo_port: somenumber
+mongo_username: ABC
+mongo_password: XYZ
+mongo_db_name: yourdbname
+
+
