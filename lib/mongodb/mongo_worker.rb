@@ -5,12 +5,12 @@ require 'mongoid'
 
 class MongoWorker < SimpleWorker::Base
 
-  attr_accessor :mongo_db, :mongo_host, :mongo_username, :mongo_password
+  attr_accessor :mongo_db_name, :mongo_host, :mongo_port, :mongo_username, :mongo_password
 
   merge 'person'
 
   def run
-    init
+    init_mongodb
 
     log "saving person..."
     person = Person.new(:first_name => "Ludwig", :last_name => "Beethoven the #{rand(100)}")
@@ -29,10 +29,11 @@ class MongoWorker < SimpleWorker::Base
 
   end
 
-  # Configures smtp settings to send email.
-  def init
+  # Configures settings for MongoDB. Values for mongo_host and mongo_port are passed in
+  # to make the example easy to understand. Could be placed directly inline to streamline.
+  def init_mongodb
     Mongoid.configure do |config|
-      config.database = Mongo::Connection.new(mongo_host, 27066).db(mongo_db)
+      config.database = Mongo::Connection.new(mongo_host, mongo_port).db(mongo_db_name)
       config.database.authenticate(mongo_username, mongo_password)
 #      config.slaves = [
 #          Mongo::Connection.new(host, 27018, :slave_ok => true).db(name)
