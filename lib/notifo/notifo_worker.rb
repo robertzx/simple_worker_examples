@@ -4,14 +4,14 @@ module SimpleWorker
   module Examples
     class NotifoWorker < SimpleWorker::Base
 
-    merge_gem "notifo"
+      merge_gem "notifo"
 
-    # These are dynamic, and will be different for each task
-    attr_accessor :username, :message, :task
+      # These are dynamic, and will be different for each task
+      attr_accessor :username, :message, :task
 
-    # These should be static, but are accessors for keeping API keys secret
-    # Sort of like ENV vars in Heroku
-    attr_accessor :notifo_user, :notifo_api
+      # These should be static, but are accessors for keeping API keys secret
+      # Sort of like ENV vars in Heroku
+      attr_accessor :notifo_user, :notifo_api
 
       # The SimpleWorker environment will invoke and run this def:
       def run
