@@ -3,7 +3,7 @@ require_relative "notifo_worker.rb"
 
 @y = YAML.load_file('./notifo.yml')
 
-w = SimpleWorker::Examples::NotifoWorker.new
+w = NotifoWorker.new
 w.notifo_user = @y["notifo_service_user"]
 w.notifo_api = @y["notifo_service_key"]
 
