@@ -1,0 +1,12 @@
+# Application credentials go here:
+notifo_service_user: 
+notifo_service_api: 
+notifo_task: subscribe
+
+# Your credentials go here:
+username:
+message:
+
+# In case of oopsie, try this
+runlocal: false
+
