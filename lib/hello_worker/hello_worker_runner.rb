@@ -5,8 +5,8 @@ load "hello_worker.rb"
 # Create a project at SimpleWorker.com and enter your credentials below
 #-------------------------------------------------------------------------
 SimpleWorker.configure do |config|
-  config.access_key = 'ENTER_SW_ACCESS_HERE'
-  config.secret_key = 'ENTER_SW_SECRET_HERE'
+  config.access_key = '1f4a1dbfaff1f8ea4fe6f70735125e79'
+  config.secret_key = 'c21c1b14e7a7c2efadf3bd84fba2cbd3'
 end
 #-------------------------------------------------------------------------
 

@@ -1,0 +1,5 @@
+# Obtain from http://simpleworker.com
+simpleworker_access: 
+simpleworker_secret:
+# Format for URI: redis://foo:<password>@<hostname>:<port>/
+redis: 
