@@ -1,0 +1,12 @@
+# SimpleWorker project keys - get them from http://simpleworker.com
+simpleworker_access: 
+simpleworker_secret: 
+# Twilio API keys - get them from https://www.twilio.com/try-twilio
+twilio_access: 
+twilio_secret: 
+# Once you have a validated phone number, stick it here:
+twilio_validated: 
+# What phone number would you like to text? 
+phone_to_victimize: 
+# What would you like to send to said person?
+message: 
