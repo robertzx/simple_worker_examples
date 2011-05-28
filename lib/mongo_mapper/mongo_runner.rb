@@ -9,6 +9,9 @@ require "mongo_mapper"
 require_relative "songs"
 require_relative "populate"
 
+# The actual worker
+require_relative "mongo_worker"
+
 # YAML configuration parsing
 @y = YAML.load_file('./mongo_mapper.yml')
 
@@ -57,4 +60,4 @@ puts "Here is the log:"
 puts @log
 
 puts 
-puts "That's all folks!
+puts "That's all folks!"
