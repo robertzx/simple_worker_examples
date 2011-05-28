@@ -5,3 +5,4 @@ simpleworker_secret:
 # PubNub account keys
 # Get these fresh from http://pubnub.com
 pubnub_publish: 
+pubnub_subscribe: 

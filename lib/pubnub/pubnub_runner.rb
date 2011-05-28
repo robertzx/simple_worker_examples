@@ -17,7 +17,8 @@ end
 w = PubNubWorker.new
 
 w.secrets = {
-              :pubnub_publish => @y['pubnub_publish']
+              :pubnub_publish => @y['pubnub_publish'],
+              :pubnub_subscribe => @y['pubnub_subscribe']
             }
 
 w.message = "B00M!"
