@@ -6,3 +6,8 @@ simpleworker_secret:
 # Get these fresh from http://pubnub.com
 pubnub_publish: 
 pubnub_subscribe: 
+pubnub_secret: 
+# Change these to what you want:
+pubnub_channel: 
+# Generally, this is JSON:
+message: 

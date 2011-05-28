@@ -12,12 +12,14 @@ class PubNubWorker < SimpleWorker::Base
     # Setup PubNub, now i'm just showing off def's
     pubnub_setup
    
+
+    puts "Channel: #{@channel}"
+    puts "Message: #{@message}"
+
     # Let's rock
-    @pubnub.message({
-                      :channel => @channel,
-                      :message => {
-                                    :message => @message
-                                  }
+    @pubnub.publish({
+                      'channel' => @channel,
+                      'message' => @message
                     })
 
     log "Message sent! :D"
@@ -25,7 +27,7 @@ class PubNubWorker < SimpleWorker::Base
 
   def pubnub_setup
     begin
-      @pubnub = Pubnub.new(@secrets[:pubnub_publish], @secrets[:pubnub_secret])
+      @pubnub = Pubnub.new(@secrets[:pubnub_publish], @secrets[:pubnub_secret], @secrets[:pubnub_secret], true)
     rescue => ex
       # Hit an owie
       log "owie: #{ex.message}"

@@ -18,9 +18,11 @@ w = PubNubWorker.new
 
 w.secrets = {
               :pubnub_publish => @y['pubnub_publish'],
-              :pubnub_subscribe => @y['pubnub_subscribe']
+              :pubnub_subscribe => @y['pubnub_subscribe'],
+              :pubnub_secret => @y['pubnub_secret']
             }
 
-w.message = "B00M!"
+w.channel = @y['pubnub_channel']
+w.message = @y['message']
 
 w.run_local
