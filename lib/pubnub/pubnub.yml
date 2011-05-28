@@ -1,0 +1,7 @@
+# SimpleWorker access keys
+# Get these hot from http://simpleworker.com
+simpleworker_access: 
+simpleworker_secret: 
+# PubNub account keys
+# Get these fresh from http://pubnub.com
+pubnub_publish: 
