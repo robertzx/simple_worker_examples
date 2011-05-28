@@ -25,4 +25,4 @@ w.secrets = {
 w.channel = @y['pubnub_channel']
 w.message = @y['message']
 
-w.run_local
+w.queue
