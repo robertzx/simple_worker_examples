@@ -4,7 +4,7 @@ class PubNubWorker < SimpleWorker::Base
   merge_gem "json"
 
   # Merge the Pubnub.rb file
-  merge_file "Pubnub"
+  merge "Pubnub"
 
   attr_accessor :secrets, :channel, :message
 
