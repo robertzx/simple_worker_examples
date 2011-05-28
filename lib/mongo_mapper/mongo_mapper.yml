@@ -1,0 +1,8 @@
+# SimpleWorker access keys
+# These come fresh from http://simpleworker.com
+simpleworker_access: 
+simpleworker_secret: 
+# MongoDB connection string
+# This is in URI format:
+# mongo://<username>:<password>@<server>:<port>/<database>
+mongo: 
