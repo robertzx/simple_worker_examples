@@ -7,6 +7,7 @@ require "mongo_mapper"
 
 # Model
 require_relative "songs"
+require_relative "populate"
 
 # YAML configuration parsing
 @y = YAML.load_file('./mongo_mapper.yml')
@@ -17,8 +18,6 @@ SimpleWorker.configure do |c|
   c.secret_key = @y['simpleworker_secret']
 end
 
-puts "I am configured, creating a worker"
-
 # Modules and everything
 # I would suggest putting all of you workers into a module
 # Simply for simplicity
@@ -28,6 +27,20 @@ w = Mango::MongoMapperWorker.new
 w.secrets = {
               :mongo => @y['mongo']
             }
+
+
+puts "I am configured"
+puts "Connecting to MongoDB..."
+
+w.mongo_connect
+
+puts "Connected!"
+puts "Populating database..."
+
+Song.populate!
+
+puts "Database populated!"
+puts "All configuration and setup complete"
 
 # Let's make the wheels go!
 puts "Shovel coal in the engine"

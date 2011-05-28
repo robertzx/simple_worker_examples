@@ -22,12 +22,15 @@ module Mango
       begin
         # This is for connecting to one server
         # This will differ if you are using a replication set, or master-slave
-        # Parse the URI
+
         require "uri" unless defined?(URI)
+        
         @url = URI.parse(@secrets[:mongo])
+
         # Connect to Mongo
-        MongoMapper.connection = Mongo::Connection.new("#{@url.host}:#{@url.port}")
-        MongoMapper.database = @secrets[:database]
+        MongoMapper.connection = Mongo::Connection.from_uri(@secrets[:mongo])
+        MongoMapper.database = @uri.path.gsub(/^\//, '')
+
         # Tada
         return true
       rescue => ex
