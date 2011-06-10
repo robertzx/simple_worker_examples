@@ -9,7 +9,7 @@ class TwilioWorker < SimpleWorker::Base
   attr_accessor :api_version, :account_sid, :account_token, :account_number, :gmail_username, :gmail_password, :gmail_domain, :recipient_phone_number
 
 
-  def run(data=nil)
+  def run
     log "I'm running TwilioWorker!!"
     
     #account = Twilio::RestAccount.new(account_sid, account_token)

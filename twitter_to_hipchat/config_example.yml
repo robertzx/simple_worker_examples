@@ -1,0 +1,9 @@
+
+sw_access_key: XXX
+sw_secret_key: YYY
+
+hipchat_api_key: ZZZ
+hipchat_room_name: MY ROOM NAME
+
+# the keyword to search for
+twitter_keyword: simpleworker
