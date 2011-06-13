@@ -15,6 +15,7 @@
 #
 
 require 'simple_worker'
+require 'yaml'
 require 'json'
 require 'open-uri'
 require 'rest-client'

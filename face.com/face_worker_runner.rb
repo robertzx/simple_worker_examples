@@ -2,6 +2,7 @@ require 'simple_worker'
 require 'json'
 require 'open-uri'
 require 'rest-client'
+require 'yaml'
 
 def get_images_twitpic(username)
   json         = open('http://api.twitpic.com/2/users/show.json?username='+username).read

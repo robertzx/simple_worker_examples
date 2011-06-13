@@ -20,8 +20,8 @@
 #
 
 require 'simple_worker'
+require 'yaml'
 require_relative "mongo_to_indextank_worker.rb"
-
 
 @config = YAML.load_file('config.yml')
 p @config

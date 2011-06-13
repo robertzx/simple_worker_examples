@@ -20,6 +20,7 @@
 
 
 require 'simple_worker'
+require 'yaml'
 
 # Require_relative on the class name will also work
 load "klout_mongo_worker.rb"

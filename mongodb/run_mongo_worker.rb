@@ -14,6 +14,7 @@
 #
 
 require 'simple_worker'
+require 'yaml'
 require_relative "mongo_worker.rb"
 
 @config = YAML.load_file('config.yml')

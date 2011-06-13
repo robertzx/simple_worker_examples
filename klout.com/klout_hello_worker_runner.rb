@@ -15,6 +15,7 @@
 #
 
 require 'simple_worker'
+require 'yaml'
 require_relative 'klout_hello_worker'
 
 @config = YAML.load_file('config.yml')

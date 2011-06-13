@@ -1,4 +1,5 @@
 require 'simple_worker'
+require 'yaml'
 
 SETTINGS = YAML.load_file('../config/twilio.yaml')
 

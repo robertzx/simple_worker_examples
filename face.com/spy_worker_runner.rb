@@ -1,4 +1,6 @@
 require 'simple_worker'
+require 'yaml'
+
 SETTINGS = YAML.load_file('../config/face.yaml')
 SimpleWorker.configure do |config|
   config.access_key = SETTINGS["sw_access_key"]

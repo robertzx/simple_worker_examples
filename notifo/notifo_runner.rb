@@ -1,4 +1,5 @@
 require "simple_worker"
+require 'yaml'
 require_relative "notifo_worker.rb"
 
 @y = YAML.load_file('./notifo.yml')
