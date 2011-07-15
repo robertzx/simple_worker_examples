@@ -10,19 +10,17 @@ class TwitterToHipchatWorker < SimpleWorker::Base
                 :twitter_keyword
 
   def run
+    log self.inspect
 
-    puts self.inspect
-
+    # Search twitter for our keyword
     twitter_search = RestClient.get "http://search.twitter.com/search.json?q=#{twitter_keyword}%20since:#{24.hours.ago.strftime("%Y-%m-%d")}"
-    puts 'search=' + twitter_search.inspect
+    log 'search=' + twitter_search.inspect
     results = JSON.parse(twitter_search)
-    p results
-
+    
+    # Now let's post the results to hipchat
     results['results'].each_with_index do |r, i|
-      puts 'r=' + r.inspect
-      puts r['text']
+      log 'r=' + r.inspect
       client = HipChat::API.new(hipchat_api_key)
-#      puts client.rooms_list
       notify_users = false
       log "posting to hipchat: "
       log client.rooms_message(hipchat_room_name, 'SimpleWorker', "@#{r['from_user']} tweeted: #{r['text']}", notify_users).body
