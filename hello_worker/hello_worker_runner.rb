@@ -27,6 +27,8 @@ worker2.queue(:priority => 2)
 # Now let's create a third worker and schedule it to run in 3 minutes, every minute, 5 times.
 worker3 = HelloWorker.new
 worker3.some_param = "I should be scheduled to run at a later time."
+# For the pretty time syntax, we need active_support/core_ext
+require "active_support/core_ext"
 worker3.schedule(:start_at => 3.minutes.since, :run_every => 60, :run_times => 5)
 
 
