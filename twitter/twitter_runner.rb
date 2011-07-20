@@ -2,7 +2,7 @@ require "simple_worker"
 require "yaml"
 require "./twitter_worker"
 
-@y = TAML.load_file('./twitter.yml')
+@y = YAML.load_file('./twitter.yml')
 
 @sw = @y['simpleworker']
 
