@@ -3,7 +3,7 @@ class SDBTestWorker < SimpleWorker::Base
   merge_gem "right_aws"
   def run
     log "connecting to AWS..."
-    @sdb = RightAWS::SdbInterface.new(@aws_access, @aws_secret)
+    @sdb = RightAws::SdbInterface.new(@aws_access, @aws_secret)
     log "All OK!\nGetting domains..."
     @sdb.list_domains[:domains].each{|x| log x.inspect }
     log "done!"
