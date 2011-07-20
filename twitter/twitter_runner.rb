@@ -17,4 +17,4 @@ end
 print "How are you feeling today?: "
 @w.message = gets.chomp
 @w.twitter_config = @y['twitter']
-@w.queue
+@w.queue(:priority => 2)
