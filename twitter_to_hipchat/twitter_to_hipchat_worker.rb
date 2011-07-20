@@ -22,7 +22,8 @@ class TwitterToHipchatWorker < SimpleWorker::Base
       log 'r=' + r.inspect
       client = HipChat::API.new(hipchat_api_key)
       notify_users = false
-      client.rooms_message(hipchat_room_name, 'simple_worker', "@#{r['from_user']} tweeted: #{r['text']}", notify_users)
+      log "posting to hipchat: "
+      log client.rooms_message(hipchat_room_name, 'SimpleWorker', "@#{r['from_user']} tweeted: #{r['text']}", notify_users).body
       break if i >= 5
     end
 
