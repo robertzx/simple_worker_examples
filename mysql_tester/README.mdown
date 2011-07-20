@@ -1,0 +1,5 @@
+# MySQL Tester Instructions
+1. Fill the config with the config
+2. ```ruby mysql_test_runner.rb```
+3. Watch the output
+4. Email luke@appoxy.com or go to support.simpleworker.com if something goes wrong
