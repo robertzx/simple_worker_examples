@@ -2,6 +2,7 @@
 ### Requirements:
 - SimpleWorker keys
 - Twitter application keys
+
 ### How to obtain your keys
 1. [Go to the Twitter developer portal to create a new application](https://dev.twitter.com/apps)
 ![Printscreen for step #1](http://rubynerd.net/dropbox/simpleworker/twitter/1.png)
