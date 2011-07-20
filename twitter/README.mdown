@@ -1,0 +1,4 @@
+# SimpleWorker => Twitter
+### Requirements:
+- SimpleWorker keys
+- Twitter application keys
