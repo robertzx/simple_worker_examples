@@ -5,8 +5,8 @@ load "hello_worker.rb"
 # Create a project at SimpleWorker.com and enter your credentials below
 #-------------------------------------------------------------------------
 SimpleWorker.configure do |config|
-  config.access_key = 'SW_ACCESS_HERE'
-  config.secret_key = 'SW_SECRET_HERE'
+  config.access_key = 'SIMPLEWORKER_ACCESS_KEY'
+  config.secret_key = 'SIMPLEWORKER_SECRET_KEY'
 end
 #-------------------------------------------------------------------------
 
@@ -39,6 +39,7 @@ puts "Now go to SimpleWorker.com to view all your jobs running!\n\n"
 
 #-----------------------------------------------------------------------------------------------------#
 
+# todo: this is in the gem now
 def self.wait_for_task(params={})
   tries  = 0
   status = nil
